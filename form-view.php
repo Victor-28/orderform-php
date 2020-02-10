@@ -46,9 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    
+    if (is_numeric($_POST["zipcode"])) {
+        $zip = $_POST['zipcode'];
+        $_SESSION["zipcode"] = $_POST['zipcode'];
+    } else {
+        $zipAlert = "no number";
 
-
+    }
 
 };
 
@@ -121,8 +125,9 @@ echo $zipAlert;
             <legend>Products</legend>
             <?php foreach ($products AS $i => $product): ?>
                 <label>
-                    <input type="checkbox" value="1" name="products[<?php echo $i ?>]"/> <?php echo $product['name'] ?> -
-                    &euro; <?php echo number_format($product['price'], 2) ?></label><br />
+                    <input type="checkbox" value="1" name="products[<?php echo $i ?>]"/> <?php echo $product['name'] ?>
+                    -
+                    &euro; <?php echo number_format($product['price'], 2) ?></label><br/>
             <?php endforeach; ?>
         </fieldset>
 
