@@ -13,9 +13,9 @@
 <body>
 
 
-<div class="alert alert-success" role="<?php echo $alert?>" >
+<!--<div class="alert alert-success" role="<?php echo $alert?>" >
     <?php echo $jakki ?>
-</div>
+</div>-->
 
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Transaction failed</strong> Please check the fields .

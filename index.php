@@ -76,10 +76,8 @@ $jakki = "";
 if ($emailAlert == "" && $streetAlert == "" && $numberAlert == "" && $cityAlert == "" && $zipAlert == "") {
 
     $jakki = "<strong>Well done!</strong> Your order has been sent.";
-
 }else{
-    $jakki = "";
-
+    $jakki = "<strong>Transaction failed</strong> Please check the fields ";
 }
 
 
