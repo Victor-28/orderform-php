@@ -28,6 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
+
+   /* f (is_numeric($_POST["street number"])) {
+        $gad = $_POST['street number'];
+        $_SESSION["street number"] = $_POST['street number'];
+    } else {
+        $gadAlert = "no such";
+
+    }
+*/
     if (empty($_POST["city"])) {
         $cityAlert = "city Required </br>";
     } else {
@@ -47,13 +56,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (is_numeric($_POST["zipcode"])) {
-        $zip = $_POST['zipcode'];
+        $gaf = $_POST['zipcode'];
         $_SESSION["zipcode"] = $_POST['zipcode'];
     } else {
-        $zipAlert = "no number";
+        $gafAlert = "no number";
 
     }
 
+
+
+  /*  <div class="alert alert-success" role="alert">
+    <strong>Well done!</strong> Your order has been sent.
+ </div>
+
+<div class="alert alert-success" role="alert">
+  <strong>Well done!</strong> Your order has been sent.
+</div>
+*/
+// the last code was the if else statement to work on zip code only with numbers not letters.
 };
 
 echo $emailAlert;
@@ -106,7 +126,7 @@ echo $zipAlert;
                 </div>
                 <div class="form-group col-md-6">
                     <label for="streetnumber">Street number:</label>
-                    <input type="text" id="streetnumber" name="streetnumber" class="form-control">
+                    <input type="number" id="streetnumber" name="streetnumber" class="form-control">
                 </div>
             </div>
             <div class="form-row">
