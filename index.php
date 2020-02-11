@@ -5,6 +5,60 @@ declare(strict_types=1);
 //we are going to use session variables so we need to enable sessions
 session_start();
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["email"])) {
+        $emailAlert = "email Required </br>";
+    } else {
+        $emailAlert = "";
+        $mail = $_POST['email'];
+        $_SESSION["email"] = $_POST['email'];
+    }
+
+
+    if (empty($_POST["street"])) {
+        $streetAlert = "Street Required </br>";
+    } else {
+        $streetAlert = "";
+        $street = $_POST['street'];
+        $_SESSION["street"] = $_POST['street'];
+    }
+
+
+    if (empty($_POST["street number"])) {
+        $numbertAlert = "Street number Required </br>";
+    } else {
+        $numberAlert = "";
+        $number = $_POST['street'];
+        $_SESSION["street number"] = $_POST['street number'];
+    }
+
+    if (empty($_POST["city"])) {
+        $cityAlert = "city Required </br>";
+    } else {
+        $cityAlert = "";
+        $city = $_POST['city'];
+        $_SESSION["city"] = $_POST['city'];
+    }
+
+
+    if (empty($_POST["zipcode"])) {
+        $zipAlert = "zipcode Required </br>";
+    } else {
+        $zipAlert = "";
+        $zip = $_POST['zipcode'];
+        $_SESSION["zipcode"] = $_POST['zipcode'];
+    }
+
+
+    if (is_numeric($_POST["zipcode"])) {
+        $gaf = $_POST['zipcode'];
+        $_SESSION["zipcode"] = $_POST['zipcode'];
+    } else {
+        $gafAlert = "no number";
+
+    }
+
+
 function whatIsHappening() {
     echo '<h2>$_GET</h2>';
     var_dump($_GET);

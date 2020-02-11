@@ -27,16 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["street number"] = $_POST['street number'];
     }
 
-
-
-   /* f (is_numeric($_POST["street number"])) {
-        $gad = $_POST['street number'];
-        $_SESSION["street number"] = $_POST['street number'];
-    } else {
-        $gadAlert = "no such";
-
-    }
-*/
     if (empty($_POST["city"])) {
         $cityAlert = "city Required </br>";
     } else {
@@ -45,7 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["city"] = $_POST['city'];
     }
 
-
     if (empty($_POST["zipcode"])) {
         $zipAlert = "zipcode Required </br>";
     } else {
@@ -53,8 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $zip = $_POST['zipcode'];
         $_SESSION["zipcode"] = $_POST['zipcode'];
     }
-
-
+    
     if (is_numeric($_POST["zipcode"])) {
         $gaf = $_POST['zipcode'];
         $_SESSION["zipcode"] = $_POST['zipcode'];
@@ -64,15 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-
-  /*  <div class="alert alert-success" role="alert">
-    <strong>Well done!</strong> Your order has been sent.
- </div>
-
-<div class="alert alert-success" role="alert">
-  <strong>Well done!</strong> Your order has been sent.
-</div>
-*/
 // the last code was the if else statement to work on zip code only with numbers not letters.
 };
 
@@ -95,6 +74,19 @@ echo $zipAlert;
     <title>Order food & drinks</title>
 </head>
 <body>
+
+
+<div class="alert alert-success" role="alert">
+    <strong>Well done!</strong> Your order has been sent.
+</div>
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
 <div class="container">
     <h1>Order food in restaurant "the Personal Ham Processors"</h1>
     <nav>
@@ -112,6 +104,7 @@ echo $zipAlert;
             <div class="form-group col-md-6">
                 <label for="email">E-mail:</label>
                 <input type="text" id="email" name="email" class="form-control"/>
+                <?php if(isset($emailAlert)){echo '<div class="alert alert-danger" role="alert">'.  $emailAlert.'</div>';}  ;?>
             </div>
             <div></div>
         </div>
