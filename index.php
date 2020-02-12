@@ -75,9 +75,9 @@ $jakki = "";
 
 if ($emailAlert == "" && $streetAlert == "" && $numberAlert == "" && $cityAlert == "" && $zipAlert == "") {
 
-    $jakki = "<strong>Well done!</strong> Your order has been sent.";
+    echo $jakki = "<strong>Well done!</strong> Your order has been sent.";
 }else{
-    $jakki = "<strong>Transaction failed</strong> Please check the fields ";
+    echo $jakki = "<strong>Transaction failed</strong> Please check the fields.";
 }
 
 
@@ -93,6 +93,8 @@ function whatIsHappening()
     var_dump($_SESSION);
 }
 
+
+
 //your products with their price.
 $products = [
     ['name' => 'Club Ham', 'price' => 3.20],
@@ -100,6 +102,7 @@ $products = [
     ['name' => 'Club Cheese & Ham', 'price' => 4],
     ['name' => 'Club Chicken', 'price' => 4],
     ['name' => 'Club Salmon', 'price' => 5]
+
 ];
 
 $products = [
@@ -108,6 +111,13 @@ $products = [
     ['name' => 'Sprite', 'price' => 2],
     ['name' => 'Ice-tea', 'price' => 3],
 ];
+
+
+//$array = new Default
+$array = new DefaultingArrayObject($array);
+$array->default = 'default';
+echo $array['k4'];
+
 
 $totalValue = 0;
 
