@@ -102,7 +102,6 @@ $products = [
     ['name' => 'Club Cheese & Ham', 'price' => 4],
     ['name' => 'Club Chicken', 'price' => 4],
     ['name' => 'Club Salmon', 'price' => 5]
-
 ];
 
 $products = [
@@ -113,10 +112,51 @@ $products = [
 ];
 
 
+
+
+
+<?php
+$prod1 = $_POST['prod1'];
+$prod2 = $_POST['prod2'];
+$calcu = $_POST['calcu'];
+  function calculate($prod1,$prod2, $calcu) // set $calcu as parameter
+     {
+        switch($calcu)
+          {
+        case "Addition": // here you have to use colons not semi-colons
+          $compute = $prod1 + $prod2;
+           break;
+        case "Subtraction":
+          $compute = $prod1 - $prod2;
+            break;
+        case "Multiplication":
+          $compute = $prod1 * $prod2;
+             break;
+        case "Division":
+          $compute = $prod1 / $prod2;
+             break;
+            }
+            return $compute; // returning variable
+        }
+    echo "$calcu <br /> <br /> 1st Number: $prod1 <br /> 2nd Number: $prod2 <br /><br />";
+    echo "Answer is:" .calculate($prod1,$prod2, $calcu); // you need to pass $calcu as argument of that function
+    ?>
+
+    // My question is if a client buy more than one in prod1 and more in prod2
+    // fast service 45mins and normal service 2hrs
+
+
+
+
+
+
+
+
+
 //$array = new Default
 $array = new DefaultingArrayObject($array);
 $array->default = 'default';
-echo $array['k4'];
+echo $array['order'];
 
 
 $totalValue = 0;
