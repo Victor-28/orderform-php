@@ -13,18 +13,6 @@
 <body>
 
 
-<!--<div class="alert alert-success" role="<?php echo $alert?>" >
-    <?php echo $jakki ?>
-</div>-->
-
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>Transaction failed</strong> Please check the fields .
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-
-
 <div class="container">
     <h1>Order food in restaurant "the Personal Ham Processors"</h1>
     <nav>
